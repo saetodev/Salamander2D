@@ -1,6 +1,7 @@
 #ifndef SAL_BASIC_H
 #define SAL_BASIC_H
 
+#include <array>
 #include <fstream>
 #include <iostream>
 #include <sstream>

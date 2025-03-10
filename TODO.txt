@@ -1,5 +1,5 @@
 Version 0.0
 
-[-] key and mouse input
+[x] key and mouse input
 [x] render texture quads
 [-] simple app api maybe
