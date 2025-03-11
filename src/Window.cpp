@@ -11,6 +11,9 @@ struct InputButton {
 
 static GLFWwindow* s_window;
 
+static f32 s_lastTime;
+static f32 s_deltaTime;
+
 static std::array<InputButton, NUM_KEY_CODES> s_keyboard;
 static std::array<InputButton, NUM_MOUSE_BUTTONS> s_mouse;
 
@@ -82,10 +85,6 @@ void Window::Shutdown() {
     glfwTerminate();
 }
 
-bool Window::Closed() {
-    return glfwWindowShouldClose(s_window);
-}
-
 void Window::SwapBuffers() {
     for (InputButton& key : s_keyboard) {
         key.pressed  = false;
@@ -99,6 +98,18 @@ void Window::SwapBuffers() {
 
     glfwSwapBuffers(s_window);
     glfwPollEvents();
+
+    f32 nowTime = glfwGetTime();
+    s_deltaTime = nowTime - s_lastTime;
+    s_lastTime  = nowTime;
+}
+
+bool Window::Closed() {
+    return glfwWindowShouldClose(s_window);
+}
+
+f32 Window::FrameTime() {
+    return s_deltaTime;
 }
 
 bool Input::KeyDown(KeyCode key) {

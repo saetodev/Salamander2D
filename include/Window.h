@@ -101,9 +101,10 @@ namespace Window {
     void Init(int width, int height, const std::string& title);
     void Shutdown();
 
-    bool Closed();
-
     void SwapBuffers();
+
+    bool Closed();
+    f32 FrameTime();
 }
 
 namespace Input {
