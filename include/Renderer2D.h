@@ -1,7 +1,7 @@
 #ifndef SAL_RENDERER2D_H
 #define SAL_RENDERER2D_H
 
-#include "Math.h"
+#include "MathUtil.h"
 
 struct Color
 {

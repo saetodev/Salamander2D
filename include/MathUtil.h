@@ -1,6 +1,8 @@
 #ifndef SAL_MATH_H
 #define SAL_MATH_H
 
+#define PI 3.14159265359
+
 struct Rect
 {
     float x;

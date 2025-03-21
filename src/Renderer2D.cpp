@@ -1,6 +1,6 @@
 #include "Renderer2D.h"
 
-#include <math.h>
+#include <cmath>
 
 #include <GLFW/glfw3.h>
 
@@ -47,7 +47,7 @@ void DrawCircle(Vector2 position, float radius, Color color)
     static int n = 32;
 
     float angle = 0.0f;
-    float step  = 2 * M_PI / n;
+    float step  = 2 * PI / n;
 
     glBegin(GL_POLYGON);
 
